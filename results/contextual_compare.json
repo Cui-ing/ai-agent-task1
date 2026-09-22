@@ -1,0 +1,217 @@
+{
+  "dataset": "/home/waldein/ai-agent-book/chapter3/contextual-retrieval-for-user-memory/memory_qa_eval.json",
+  "n_chunks": 12,
+  "plain": {
+    "recall@1": 0.625,
+    "recall@3": 1.0,
+    "mrr": 0.7916666666666666,
+    "n_queries": 8
+  },
+  "contextual": {
+    "recall@1": 0.75,
+    "recall@3": 1.0,
+    "mrr": 0.875,
+    "n_queries": 8
+  },
+  "delta": {
+    "recall@1": 0.125,
+    "recall@3": 0.0,
+    "mrr": 0.08333333333333337
+  },
+  "plain_details": [
+    {
+      "q": "我最后确认预订的那张上海到西雅图的机票是哪个航班？",
+      "gold": "flight_confirm",
+      "rank": 2,
+      "hit@1": 0,
+      "hit@3": 1,
+      "top": [
+        "flight_detail",
+        "flight_confirm",
+        "hotel_detail"
+      ]
+    },
+    {
+      "q": "我订的西雅图酒店确认了吗，是哪家？",
+      "gold": "hotel_confirm",
+      "rank": 3,
+      "hit@1": 0,
+      "hit@3": 1,
+      "top": [
+        "hotel_detail",
+        "flight_detail",
+        "hotel_confirm"
+      ]
+    },
+    {
+      "q": "我设为默认收款的银行支票账户是哪个？",
+      "gold": "bank_confirm",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "bank_confirm",
+        "bank_account",
+        "flight_confirm"
+      ]
+    },
+    {
+      "q": "从上海到西雅图那趟航班的票价是多少？",
+      "gold": "flight_detail",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "flight_detail",
+        "bank_account",
+        "hotel_detail"
+      ]
+    },
+    {
+      "q": "我的护照什么时候过期？",
+      "gold": "passport",
+      "rank": 2,
+      "hit@1": 0,
+      "hit@3": 1,
+      "top": [
+        "insurance_distractor",
+        "passport",
+        "hotel_detail"
+      ]
+    },
+    {
+      "q": "医生把我的二甲双胍剂量调成多少了？",
+      "gold": "medication",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "medication",
+        "bank_account",
+        "car_distractor"
+      ]
+    },
+    {
+      "q": "我有哪些饮食过敏和忌口？",
+      "gold": "restaurant_pref",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "restaurant_pref",
+        "gym_distractor",
+        "passport"
+      ]
+    },
+    {
+      "q": "西雅图凯悦酒店三晚一共多少钱？",
+      "gold": "hotel_detail",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "hotel_detail",
+        "car_distractor",
+        "flight_detail"
+      ]
+    }
+  ],
+  "contextual_details": [
+    {
+      "q": "我最后确认预订的那张上海到西雅图的机票是哪个航班？",
+      "gold": "flight_confirm",
+      "rank": 2,
+      "hit@1": 0,
+      "hit@3": 1,
+      "top": [
+        "flight_detail",
+        "flight_confirm",
+        "hotel_confirm"
+      ]
+    },
+    {
+      "q": "我订的西雅图酒店确认了吗，是哪家？",
+      "gold": "hotel_confirm",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "hotel_confirm",
+        "hotel_detail",
+        "flight_confirm"
+      ]
+    },
+    {
+      "q": "我设为默认收款的银行支票账户是哪个？",
+      "gold": "bank_confirm",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "bank_confirm",
+        "bank_account",
+        "flight_confirm"
+      ]
+    },
+    {
+      "q": "从上海到西雅图那趟航班的票价是多少？",
+      "gold": "flight_detail",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "flight_detail",
+        "flight_confirm",
+        "bank_account"
+      ]
+    },
+    {
+      "q": "我的护照什么时候过期？",
+      "gold": "passport",
+      "rank": 2,
+      "hit@1": 0,
+      "hit@3": 1,
+      "top": [
+        "insurance_distractor",
+        "passport",
+        "hotel_detail"
+      ]
+    },
+    {
+      "q": "医生把我的二甲双胍剂量调成多少了？",
+      "gold": "medication",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "medication",
+        "car_distractor",
+        "bank_account"
+      ]
+    },
+    {
+      "q": "我有哪些饮食过敏和忌口？",
+      "gold": "restaurant_pref",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "restaurant_pref",
+        "gym_distractor",
+        "passport"
+      ]
+    },
+    {
+      "q": "西雅图凯悦酒店三晚一共多少钱？",
+      "gold": "hotel_detail",
+      "rank": 1,
+      "hit@1": 1,
+      "hit@3": 1,
+      "top": [
+        "hotel_detail",
+        "hotel_confirm",
+        "car_distractor"
+      ]
+    }
+  ]
+}
